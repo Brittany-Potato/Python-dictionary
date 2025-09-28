@@ -32,6 +32,25 @@
 # endswith()
 "hello".endswith("lo") # -> True
 
+# capitalize()
+"hello".capitalize() # Converts the first character to uppercase
+
+# title()
+"hello world".title() # Converts the first char of each word to capital letters
+
+# join()
+",".join(["a", "b", "c"]) # = "a, b, c"
+
+# count()
+"hello".count("l") # Returns the number of times a specified value occurs in a string
+
+# lstrip() / rstrip()
+"hello ".rstrip() # Variations of strip() that remove the leading/trailing whitespace respectively
+
+# isdigit() / isalpha() / isalnum
+"hello".isalpha() # Checked if all the characters in the string are digits, alphabetic or alphnumeric
+
+
 # * ~~ List Methods ~~
 
 #? 'List Methods' are built- in functions that can be used to 
@@ -59,6 +78,20 @@ mylist.reverse() # -> [5,4,3,2,1] Reverses the list
 
 # sort()
 mylist.sort() # -> [1,2,3,4,5] Sorts the list in ascending order
+
+# index()
+mylist.index(2) # Returns the index of the first element with the specified value
+
+# count()
+mylist.count(2) # Returns the number of elements with the specified value 
+
+# copy()
+mylist.copy() # Returns a shallow copy of the list
+
+# sort()
+mylist.sort() # parameters: Show how to use the key and reverse arguments
+my_cars = [{'car': 'Ford', 'year': 2005}, {'car': 'BMW', 'year': 2019}]
+my_cars.sort(key=lambda e: e['year']) # Sorts the list of dictionaries by year
 
 # * ~~ Dictionary Methods ~~
 
@@ -88,6 +121,17 @@ mydict.pop("a") # -> 1 - Removes the key "a" and returns its value
 # clear()
 mydict.clear() # Removes all keyvalue pairs from the dictionary mydict = {}
 
+# popitem()
+mydict.popitem() # Removes the last key value pair
+
+# setdefault()
+mydict.setdefault() # Returns the value of a key, but inserts ti with a default value if the key doesn't exist
+mydict.setdefault("c", 3) # -> 3 (and mydict is now {"a": 1, "b": 2, "c": 3})
+mydict.setdefault("a", 5) # -> 1 (value for "a" already exists, so it's returned)
+
+# fromkeys()
+mydict.fromkeys() # Creates a new dictionary with specified keys
+
 # * ~~ Set Methods ~~
 
 myset = {1, 2, 3, 4} 
@@ -115,6 +159,11 @@ a.intersection(b) # -> {3} - Returns a new set with elements common to both a an
 
 # difference()
 a.difference(b) # -> {1, 2} - Returns a new set with elements in a but not b
+
+# symmetric_difference()
+a.symmetric_difference(b) # Returns a set with elements that are in  either of the sets, but not both
+
+# issubset()
 
 # * ~~ Trupe Methods ~~
 
