@@ -164,6 +164,13 @@ a.difference(b) # -> {1, 2} - Returns a new set with elements in a but not b
 a.symmetric_difference(b) # Returns a set with elements that are in  either of the sets, but not both
 
 # issubset()
+a.issubset(b) # Checks if one set contains another
+
+# issuperset()
+a.issuperset(b) # Checks if this set contains another set
+
+#isdisjoint()
+a.isdisjoint(b) # Returns true if the two sets have no intersection
 
 # * ~~ Trupe Methods ~~
 
@@ -198,6 +205,12 @@ f.close() # -> Not needed/used with using with because it auto closes
 # seek()
 f.seek(0) # -> Hello text - Moves the cursor back to the beginning of the file, so you can re-read it
 
+# tell()
+f.tell() # Returns the current file position (the cursors location)
+
+# truncate()
+f.truncate() # Resizes the file to a specified number of bytes
+
 # * ~~ Class special Methods (Dunder Methods) ~~
 
 # __init__() -> Object creation 
@@ -211,6 +224,14 @@ f.seek(0) # -> Hello text - Moves the cursor back to the beginning of the file, 
 #__getitem__() -> obj[key] = value
 
 #__iter__() -> looping
+
+# __setitem__() -> For assignment (obj[Key] = value)
+
+# __delitem__() -> For item deletion (del obj[Key])
+
+# __add__(), __sub__() -> etc for operator overloading (+, -)
+
+# __new__() -> The first method called during object creation, responsible for returning a new instance
 
 # * ~~ Object-Oriented Methods (Instance Methods) ~~
 

@@ -72,7 +72,7 @@ not True # False
 # & -> Bitwise AND
 5 & 3 # 1 -> 101 & 011 = 001
 
-# ` -> ` -> Bitwise OR
+# | -> | -> Bitwise OR
 # `5
 
 # ^ -> Bitwise XOR (exclusive OR)
@@ -86,6 +86,21 @@ not True # False
 
 # >> -> Shift right
 8 >> 2 # 2 -> 1000->10 (Divide by 4)
+
+# &= -> Bitwise AND and assign
+x &= 3 # x = x & 3
+
+# |= -> Bitwise OR and assign
+x |= 3 # x = x | 3
+
+# ^= -> Bitwise XOR and assign
+x ^= 3 # x = x ^ 3
+
+# >>= -> Bitwise right shoft and assign
+x >>= 3 # x = x >> 3
+
+# <<= -> Bitwise leftshift and assign
+x <<= 3 # x = x << 3
 
 # * ~~ Identity Operators ~~
 
@@ -123,3 +138,8 @@ result = "even" if x % 2 == 0 else "odd"
 # not
 # and
 # or
+
+# Unary plus and minus
+a = 5
+b = -a # b is -5 (Unary minus)
+c = +b # c is still -5 (Unary plus - less common but still exists)
