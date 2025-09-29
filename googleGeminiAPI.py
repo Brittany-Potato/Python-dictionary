@@ -35,7 +35,8 @@ import google.generativeai as genai
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-#* Gemini has different models:
+#* Gemini has different models: 
+#! Gemini 1.5 model line has retired, gemini-2.0-flash is safe
 
 # "models/gemini-pro" - Text based
 # "models/gemini-pro-vision" - multimodal (Image & Text)
