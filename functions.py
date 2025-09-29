@@ -23,6 +23,9 @@ callable(print) # -> True
 
 # eval() -> Evaluates a string as Python code #! (risky)
 
+#repr() -> Official strign representation
+repr("hello") # "'hello'"
+
 # * ~~ Numeric Functions ~~
 
 # abs() -> Absolute value
@@ -69,10 +72,10 @@ sorted([3, 1, 2]) # -> [1, 2, 3]
 list(reversed("abc")) # -> ['c', 'b', 'a']
 
 # enumerate() -> Index + value pairs
-list(enumerate(['a', 'b'])) # -> [(0, 'a')]
+list(enumerate(['a', 'b'])) # -> [(0, 'a'), (1, 'b')]
 
 # zip() -> Combines iterables into tuples
-zip([1,2],[3,4]) [(1,3), (2,4)]
+list(zip([1,2],[3,4])) # -> [(1, 3), (2, 4)]
 
 # map() -> Applies a function to all items
 list(map(str.upper, ['a', 'b'])) # -> ['A', 'B']
@@ -86,31 +89,44 @@ all([True, True]) # -> True
 # any() -> Checks if any item is True
 any([False, True]) # -> True
 
+# iter -> Returns an interator object from an iterable
+my_list = ['a', 'b', 'c']
+my_iterator = iter(my_list)
+
+# next() -> Retrieves the next item
+next(my_iterator) # a
+next(my_iterator) # b
+
+my_list = [0,1,2,3,4,5]
+# slice() -> Returns a slice object that can be used to slice sequences
+my_slice = slice(1,5,2) # Start at index 1, end before 5 and step by 2
+my_list[my_slice] # [1, 3]
+
 # * ~~ Object and Variable Functions ~~
 
 my_obj = {'Hello'}
 obj = {'Please stop providing the squiggle lines'}
 
 # vars() -> Returns __dict__ attribute of an object
-vars(my_obj)
+vars(my_obj) # {'attr': 'hello}
 
 # globals() -> Returns global namespace dictionary
-globals()
+globals() 
 
 # locals() -> Returns local namespace dictionary
 locals()
 
 # delattr() -> Deletes an attribute from an object
-delattr(obj, "attr")
+delattr(obj, "attr") # Deletes an attribute from an object
 
 # getattr() -> Gets attribute value
-getattr(obj, "attr")
+getattr(obj, "attr") # "hello"
 
 # setattr() -> Sets an attribute 
-setattr(obj, "attr", 42)
+setattr(obj, "attr", 42) # obj now has an attribute new_attr with the value of 42
 
 # hasattr() -> Checks if an object has an attribute
-hasattr(obj, "attr")
+hasattr(obj, "attr") # True
 
 # * ~~ Type Conversion Functions ~~
 
@@ -130,7 +146,7 @@ list("abc") # -> ['a', 'b', 'c']
 dict(a=1, b=2) # -> {'a':1, 'b':2}
 
 # set() -> Creates a set
-set([1,2,2]) # -> {1, 2}
+set([1,2,2]) # -> {1, 2}Iterable 
 
 # bool() -> Converts to Boolean
 bool(0) # -> False
@@ -146,6 +162,9 @@ hex(255) # -> '0xff'
 
 # oct() -> Octal representation 
 oct(8) # -> '0o10'
+
+# tuple() -> Converts to tuple
+tuple([1,2,3]) # (1,2,3)
 
 # * ~~ Input/Output ~~
 
@@ -170,5 +189,6 @@ exit()
 # lambda -> Anonymous function
 lambda x: x * 2
 
+# import functools import reduce
 # reduce() -> Applies a function cumulatively
 reduce(lambda x, y: x+y, [1,2,3])
